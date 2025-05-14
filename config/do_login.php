@@ -1,6 +1,6 @@
 <?php
-
-require_once 'boot.php';
+require ROOT . '/public/index.php';
+require_once CONFIG . '/boot.php';
 
 $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `username` = :username");
 $stmt->execute(['username' => $_POST['username']]);
