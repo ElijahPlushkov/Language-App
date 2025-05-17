@@ -1,9 +1,8 @@
 <?php
 
-//require CONTROLLERS . '/create_deck.php';
-
 require APPLICATION . '/includes/header.php';
 
+require CONTROLLERS . '/create_deck.php';
 ?>
 
 <body class="bg-light">
@@ -65,7 +64,8 @@ require APPLICATION . '/includes/header.php';
                     </div>
 
                     <div class="card-display" id="cardsForDeck<?= $deck['deck_id'] ?>">
-                      <?php  if (empty($cards)) : ?>
+                        <?php require CONTROLLERS . '/display_cards.php';
+                        if (empty($cards)) : ?>
                             <div class="alert alert-info">No cards in this deck yet.</div>
                         <?php else : ?>
                             <?php foreach ($cards as $card) : ?>
@@ -173,24 +173,26 @@ require APPLICATION . '/includes/header.php';
                 </div>
             </div>
 
-        <!--EDIT DECK-->
-            <div class="modal fade" id="editModal<?=$deck['deck_id']?>" tabindex="-1" aria-hidden="true">
+            <!--EDIT DECK-->
+            <div class="modal fade" id="editModal<?= $deck['deck_id'] ?>" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <form method="POST" action="edit_deck.php">
-                            <input type="hidden" name="deck_id" value="<?=$deck['deck_id']?>">
+                            <input type="hidden" name="deck_id" value="<?= $deck['deck_id'] ?>">
                             <div class="modal-header bg-light">
                                 <h5 class="modal-title fs-5">
                                     <i class="fas fa-edit me-2"></i>Edit Deck
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <label for="editDeckName<?=$deck['deck_id']?>" class="form-label fw-semibold">Deck Name</label>
+                                    <label for="editDeckName<?= $deck['deck_id'] ?>" class="form-label fw-semibold">Deck
+                                        Name</label>
                                     <input type="text" name="new_deck_name" class="form-control form-control-lg"
-                                           id="editDeckName<?=$deck['deck_id']?>"
-                                           value="<?=htmlspecialchars($deck['deck_name'])?>" required>
+                                           id="editDeckName<?= $deck['deck_id'] ?>"
+                                           value="<?= htmlspecialchars($deck['deck_name']) ?>" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -206,19 +208,20 @@ require APPLICATION . '/includes/header.php';
                 </div>
             </div>
 
-<!--DELETE DECK-->
-            <div class="modal fade" id="deleteModal<?=$deck['deck_id']?>" tabindex="-1" aria-hidden="true">
+            <!--DELETE DECK-->
+            <div class="modal fade" id="deleteModal<?= $deck['deck_id'] ?>" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <form method="POST" action="delete_deck.php">
-                            <input type="hidden" name="deck_id" value="<?=$deck['deck_id']?>">
+                            <input type="hidden" name="deck_id" value="<?= $deck['deck_id'] ?>">
                             <div class="modal-header">
                                 <h5 class="modal-title">Delete Deck</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
-                                    <h5>Delete <?=$deck['deck_name']?>?</h5>
+                                    <h5>Delete <?= $deck['deck_name'] ?>?</h5>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -265,5 +268,5 @@ require APPLICATION . '/includes/header.php';
     </div>
 </div>
 
-<script src="deck_actions.js"></script>
+<script src="<?= PATH ?>/assets/deck_actions.js"></script>
 </body>

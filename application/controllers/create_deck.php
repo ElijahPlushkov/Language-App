@@ -28,11 +28,6 @@ $sql = $pdo->prepare("SELECT * FROM `decks` WHERE user_id = ?");
 $sql->execute([$userId]);
 $decks = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-$deck = $decks[0] ?? null;
-
-if ($deck) {
-    require CONTROLLERS . '/display_cards.php';
-}
-
-require VIEWS . '/create_deck.tpl.php';
-
+//require CONTROLLERS . '/display_cards.php';
+//
+//require VIEWS . '/create_deck.tpl.php';

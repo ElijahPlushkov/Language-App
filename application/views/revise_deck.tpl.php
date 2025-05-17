@@ -1,5 +1,5 @@
 <?php
-require INCLUDES . '/header.tpl.php';
+require APPLICATION . '/includes/header.php';
 require CONTROLLERS . '/revise_deck.php';
 ?>
 
@@ -29,7 +29,7 @@ require CONTROLLERS . '/revise_deck.php';
 <?php endforeach; ?>
 
 <div class="d-flex justify-content-center gap-3 mt-4">
-    <a href="create_deck.tpl.php" class="exit btn btn-danger btn-lg d-none">
+    <a href="create_deck" class="exit btn btn-danger btn-lg d-none">
         <i class="fas fa-sign-out-alt me-2"></i>Finish
     </a>
     <a href="revise_deck.tpl.php?deck_id=<?=$deck['deck_id']?>" class="restart btn btn-success btn-lg d-none">
@@ -37,5 +37,5 @@ require CONTROLLERS . '/revise_deck.php';
     </a>
 </div>
 
-<script src="<?= "PUBLIC" ?> /assets/slider.js"></script>
-<script src="<?= "PUBLIC" ?> /assets/deck_actions.js"></script>
+<script src="<?= PATH ?>/assets/deck_actions.js"></script>
+<script src="<?= PATH ?>/assets/slider.js"></script>

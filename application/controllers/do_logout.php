@@ -1,6 +1,6 @@
 <?php
 
-require_once 'boot.php';
+require_once CONFIG . '/boot.php';
 
 $_SESSION['user_id'] = null;
-header('Location: main-page.php');
+header('Location: index.php');
