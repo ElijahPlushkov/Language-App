@@ -6,6 +6,7 @@ $routes = [
     'index.php' => 'index.php',
     'create_deck' => 'create_deck.tpl.php',
     'login' => 'login.php',
+    'login.php' => 'login.php',
     'do_login.php' => 'do_login.php',
     'do_logout.php' => 'do_logout.php',
     'do_register.php' => 'do_register.php',

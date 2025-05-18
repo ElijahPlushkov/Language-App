@@ -1,47 +1,77 @@
 const cards = document.querySelectorAll(".card");
+const currentCard = document.querySelector(".current-card");
 let cardIndex = 0;
+let cardNumber = 1;
 
-document.addEventListener('DOMContentLoaded', showCard);
+document.addEventListener('DOMContentLoaded', function () {
+    showCard();
+    showNumberOfCards();
+});
+
+function showNumberOfCards() {
+  const cards = document.querySelectorAll(".card");
+  const numberOfCards = cards.length;
+  const totalCards = document.querySelector(".total-cards");
+  totalCards.textContent = numberOfCards;
+};
 
 function showCard(index) {
-
-    const firstCard = cards[0];
-    firstCard.querySelector(".prev").classList.add("disabled");
-
-    if (index === cards.length - 1) {
-        exitReviseMode();
-        restartDeck();
-        const currentCard = cards[index];
-        currentCard.querySelector(".next").classList.add("d-none");
-        currentCard.querySelector(".prev").classList.add("d-none");
-    }
-
-    else if (index < 0) {
-        cardIndex = cards.length - 1;
-    }
 
     cards.forEach(card => {
         card.classList.add("d-none");
     });
-    cards[cardIndex].classList.remove("d-none");  
+
+    if (index >= cards.length) {
+        exitButton();
+        restartButton();
+        displayFinalScore();
+        return;
+    }
+
+    if (index < 0) {
+        cardIndex = cards.length - 1;
+    }
+   
+    const currentCard = cards[cardIndex];
+    currentCard.classList.remove("d-none");  
+
+    const firstCard = cards[0];
+    firstCard.querySelector(".prev").classList.add("disabled");
 }
 
-function exitReviseMode() {
+function displayFinalScore() {
+    const displayFinalScore = document.querySelector(".display-final-score");
+    displayFinalScore.classList.remove("d-none");
+}
+
+function exitButton() {
     const exitButton = document.querySelector(".exit");
     exitButton.classList.remove("d-none");
 }
 
-function restartDeck() {
+function restartButton() {
     const restartButton = document.querySelector(".restart");
     restartButton.classList.remove("d-none");
-}
-
-function prevCard(){
-    cardIndex--;
-    showCard(cardIndex);
 }
 
 function nextCard(){
     cardIndex++;
     showCard(cardIndex);
+
+    const cards = document.querySelectorAll(".card");
+    const numberOfCards = cards.length;
+
+    if (cardNumber < numberOfCards) {
+        cardNumber++;
+        currentCard.textContent = cardNumber;
+    } 
 }
+
+function prevCard(){
+    cardIndex--;
+    showCard(cardIndex);
+
+    cardNumber--;
+    currentCard.textContent = cardNumber;
+}
+
