@@ -21,13 +21,8 @@ if (isset($_POST['create-deck'])) {
     $sql = ("INSERT INTO `decks` (`user_id`, `deck_name`) VALUE (?,?)");
     $query = $pdo->prepare($sql);
     $query->execute([$userId, $deckName]);
-
 }
 
 $sql = $pdo->prepare("SELECT * FROM `decks` WHERE user_id = ?");
 $sql->execute([$userId]);
 $decks = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-//require CONTROLLERS . '/display_cards.php';
-//
-//require VIEWS . '/create_deck.tpl.php';

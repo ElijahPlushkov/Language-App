@@ -27,10 +27,6 @@ function showCard(index) {
         displayFinalScore();
         return;
     }
-
-    if (index < 0) {
-        cardIndex = cards.length - 1;
-    }
    
     const currentCard = cards[cardIndex];
     currentCard.classList.remove("d-none");  
@@ -74,4 +70,3 @@ function prevCard(){
     cardNumber--;
     currentCard.textContent = cardNumber;
 }
-

@@ -33,5 +33,4 @@ document.querySelectorAll('.add-new-card').forEach(btn => {
             ? "Show Answer" : "Hide Answer";
         }
     });
-
 });
