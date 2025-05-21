@@ -33,4 +33,20 @@ document.querySelectorAll('.add-new-card').forEach(btn => {
             ? "Show Answer" : "Hide Answer";
         }
     });
+
+    const successRateDeckDisplayBanners = document.querySelectorAll(".decks-display__success-rate");
+    successRateDeckDisplayBanners.forEach(banner => {
+        const successRateText = banner.textContent.trim();
+        const successRateInt = parseFloat(successRateText.match(/\d+/)[0]);
+
+        if (successRateInt >= 75) {
+            banner.classList.add("btn-outline-success");
+        }
+        else if (successRateInt >= 50) {
+            banner.classList.add("btn-outline-warning");
+        }
+        else {
+            banner.classList.add("btn-outline-danger");
+        }
+    });
 });

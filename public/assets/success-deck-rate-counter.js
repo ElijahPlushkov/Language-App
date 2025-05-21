@@ -1,3 +1,4 @@
+//Displays success rate in revise_deck.tpl.php
 let scoreCounter = 0;
 let finalScoreDisplay;
 let successRateDisplay;

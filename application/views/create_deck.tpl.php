@@ -29,8 +29,8 @@ require CONTROLLERS . '/create_deck.php';
                     <div class="d-flex justify-content-between align-items-center">
                         <h2 class="h4 mb-0 deck-name"><?= htmlspecialchars($deck['deck_name']) ?></h2>
                         <div>
-                            <button class="btn btn-sm btn-light btn-outline-success me-2">
-                                <i class="fa-solid fa-circle"></i> 85%
+                            <button class="btn btn-sm btn-light me-2 decks-display__success-rate">
+                                <i class="fa-solid fa-circle"></i> <?= htmlspecialchars($deck['success_rate']) ?>%
                             </button>
                             <a href="revise_deck.tpl.php?deck_id=<?= $deck['deck_id'] ?>"
                                class="btn btn-sm btn-info me-2">
