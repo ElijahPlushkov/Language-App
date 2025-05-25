@@ -1,6 +1,7 @@
 <?php
 require_once CONFIG . '/boot.php';
 
+//I can make it a function so to avoid using it directly
 $deck_id = isset($_GET['deck_id']) ? (int)$_GET['deck_id'] : null;
 
 $pdo = pdo();

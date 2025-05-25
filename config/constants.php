@@ -8,4 +8,5 @@ define("APPLICATION", ROOT . '/application');
 define("CONTROLLERS", APPLICATION . '/controllers');
 define("VIEWS", APPLICATION . '/views');
 define("INCLUDES", APPLICATION . '/includes');
+define("MODEL", APPLICATION . '/model');
 define("PATH", 'http://localhost:8080/language-app');
