@@ -6,7 +6,8 @@ $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `username` = :username");
 $stmt->execute(['username' => $_POST['username']]);
 if ($stmt->rowCount() > 0) {
     flash('this name is already taken.');
-    header('Location: login');
+//    header('Location: login');
+    require VIEWS . '/login.tpl.php';
     die;
 }
 
@@ -16,4 +17,5 @@ $stmt->execute([
     'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 ]);
 
-header('Location: login');
+header('Location: display_welcome-page.php');
+//require VIEWS . '/login.tpl.php';

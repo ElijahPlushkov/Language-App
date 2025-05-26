@@ -6,5 +6,3 @@ require CORE . '/functions.php';
 require CONFIG . '/dependencies.php';
 
 require CORE . '/router.php';
-
-

@@ -3,4 +3,7 @@
 require_once CONFIG . '/boot.php';
 
 $_SESSION['user_id'] = null;
-header('Location: index.php');
+//require VIEWS . '/welcome_page.tpl.php';
+
+
+header('Location: display_welcome-page.php');

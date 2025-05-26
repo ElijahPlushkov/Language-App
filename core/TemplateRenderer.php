@@ -7,4 +7,3 @@ function render(string $file, array $data = []): string {
     require VIEWS . "/" . $file;
     return ob_get_clean();
 }
-

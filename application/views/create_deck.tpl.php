@@ -1,8 +1,8 @@
 <?php
 
-require APPLICATION . '/includes/header.php';
+require VIEWS . '/header.tpl.php';
 
-require CONTROLLERS . '/create_deck.php';
+//require CONTROLLERS . '/create_deck.php';
 ?>
 
 <body class="bg-light">
@@ -23,7 +23,10 @@ require CONTROLLERS . '/create_deck.php';
     </form>
 
     <div id="decksDisplay">
-        <?php foreach ($decks as $deck): ?>
+        <?php
+//        require CONTROLLERS . '/create_deck.php';
+//        echo showAllDecks($pdo, $userId['user_id']);
+        foreach ($decks as $deck): ?>
         <div class="deck card mb-4 shadow-sm" id="<?= htmlspecialchars($deck['deck_id']) ?>">
             <div class="card-header bg-white">
                 <div class="d-flex justify-content-between align-items-center">
@@ -133,7 +136,7 @@ require CONTROLLERS . '/create_deck.php';
             </div>
         </div>
         <?php endforeach; ?>
-        
+
         <!--ADD CARD-->
         <div class="modal fade" id="addCard" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
