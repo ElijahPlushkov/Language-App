@@ -1,6 +1,5 @@
 <?php
-require APPLICATION . '/includes/header.php';
-require CONTROLLERS . '/revise_deck.php';
+require VIEWS . '/header.tpl.php';
 ?>
 
 <div class="card-counter d-flex justify-content-center">
@@ -50,7 +49,7 @@ require CONTROLLERS . '/revise_deck.php';
     <a href="create_deck" class="exit btn btn-danger btn-lg d-none">
         <i class="fas fa-sign-out-alt me-2"></i>Finish
     </a>
-    <a href="revise_deck.tpl.php?deck_id=<?=$deck['deck_id']?>" class="restart btn btn-success btn-lg d-none">
+    <a href="revise_deck.php?deck_id=<?=$deck['deck_id']?>" class="restart btn btn-success btn-lg d-none">
         <i class="fas fa-redo me-2"></i>Restart
     </a>
 </div>

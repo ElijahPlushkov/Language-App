@@ -2,7 +2,6 @@
 
 require VIEWS . '/header.tpl.php';
 
-//require CONTROLLERS . '/create_deck.php';
 ?>
 
 <body class="bg-light">
@@ -23,10 +22,7 @@ require VIEWS . '/header.tpl.php';
     </form>
 
     <div id="decksDisplay">
-        <?php
-//        require CONTROLLERS . '/create_deck.php';
-//        echo showAllDecks($pdo, $userId['user_id']);
-        foreach ($decks as $deck): ?>
+        <?php foreach ($decks as $deck): ?>
         <div class="deck card mb-4 shadow-sm" id="<?= htmlspecialchars($deck['deck_id']) ?>">
             <div class="card-header bg-white">
                 <div class="d-flex justify-content-between align-items-center">
@@ -35,7 +31,7 @@ require VIEWS . '/header.tpl.php';
                         <button class="btn btn-sm btn-light me-2 decks-display__success-rate">
                             <i class="fa-solid fa-circle"></i> <?= htmlspecialchars($deck['success_rate']) ?>%
                         </button>
-                        <a href="revise_deck.tpl.php?deck_id=<?= $deck['deck_id'] ?>"
+                        <a href="revise_deck.php?deck_id=<?= $deck['deck_id'] ?>"
                            class="btn btn-sm btn-info me-2">
                             <i class="fa-solid fa-book"></i> Revise
                         </a>
