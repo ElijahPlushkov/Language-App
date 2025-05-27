@@ -1,9 +1,6 @@
 <?php
 
-require_once CONFIG . '/boot.php';
-
 if (isset($_POST['editCard'])) {
-    $pdo = pdo();
 
     $newCardFront = $_POST['newCardFront'];
     $newCardBack = $_POST['newCardBack'];

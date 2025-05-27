@@ -18,4 +18,3 @@ $stmt->execute([
 ]);
 
 header('Location: display_welcome-page.php');
-//require VIEWS . '/login.tpl.php';
