@@ -2,19 +2,7 @@
 
 session_start();
 
-require CONFIG . "/config.php";
-
-function pdo(): PDO
-{
-    static $pdo;
-
-    if (!$pdo) {
-        $pdo = new PDO('mysql:dbname=flashcard_app;host=127.0.0.1', 'root', '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-
-    return $pdo;
-}
+$pdo = require CONFIG . "/dependencies.php";
 
 function flash(?string $message = null)
 {
@@ -38,7 +26,7 @@ function check_auth(): bool
 $user = null;
 
 if (check_auth()) {
-    $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `user_id` = :id");
+    $stmt = $pdo->prepare("SELECT * FROM `users` WHERE `user_id` = :id");
     $stmt->execute(['id' => $_SESSION['user_id']]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 }

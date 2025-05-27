@@ -16,6 +16,6 @@ $routes = [
     'add_card.php' => 'add_card.php',
     'edit_card.php' => 'edit_card.php',
     'delete_card.php' => 'delete_card.php',
-    'revise_deck.tpl.php' => 'revise_deck.tpl.php',
+    'revise_deck.php' => 'revise_deck.php',
     'deck_success_rate' => 'deck_success_rate.php',
 ];
