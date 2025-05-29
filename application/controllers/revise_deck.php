@@ -1,10 +1,9 @@
 <?php
 
-//I can make it a function so to avoid using it directly
-$deck_id = isset($_GET['deck_id']) ? (int)$_GET['deck_id'] : null;
+$deckId = getDeckId($_GET);
 
 $stmt = $pdo->prepare("SELECT * FROM decks WHERE deck_id=?");
-$stmt->execute([$deck_id]);
+$stmt->execute([$deckId]);
 $deck = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $stmt = $pdo->prepare("SELECT * FROM cards WHERE deck_id = ? ORDER BY RAND()");
