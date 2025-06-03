@@ -1,0 +1,5 @@
+This file controls the initial access and redirects the user to the public folder.
+
+RewriteEngine On
+RewriteRule (.*) public/$1
+
