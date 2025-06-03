@@ -1,0 +1,5 @@
+This is the second .htaccess file that redirects all the requests to the front controller.
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) index.php?$1 [L,QSA]
